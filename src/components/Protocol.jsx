@@ -93,7 +93,7 @@ export default function Protocol() {
             <span className="font-mono text-xl text-accent block mb-4">01</span>
             <h2 className="font-sans font-bold text-5xl md:text-7xl tracking-tighter uppercase mb-6">Initialize</h2>
             <p className="font-mono text-sm text-primary/70 max-w-md leading-relaxed">
-              Establishing base layer connection. Begin mind sync to map parameters. Understand the foundation of art space. Commence design of unique living system.
+              Establishing base layer connection. Begin mind sync to map parameters. Understand the foundation of art space. Commence design of unique VR/AR/MR/XR experience.
             </p>
           </div>
           <div className="flex justify-center md:justify-end">
@@ -109,7 +109,7 @@ export default function Protocol() {
             <span className="font-mono text-xl text-accent block mb-4">02</span>
             <h2 className="font-sans font-bold text-5xl md:text-7xl tracking-tighter uppercase mb-6">Calibrate</h2>
             <p className="font-mono text-sm text-primary/70 max-w-md leading-relaxed">
-              Iteration of art systems. Real-time experimentation and feedback. Adjust parameters to refine responsiveness and aesthetics. Co-evolve with the system to create a unique living artwork.
+              Iteration of art systems. Real-time experimentation and feedback. Adjust parameters to refine responsiveness and aesthetics. Co-evolve with the system to create a unique experience.
             </p>
           </div>
           <div className="flex justify-center md:justify-end">

@@ -8,7 +8,7 @@ export default function CTA() {
           Ready to Connect
         </h2>
         <p className="font-mono text-sm md:text-base text-dark/70 max-w-xl mx-auto mb-12 uppercase tracking-wide">
-          Deploy an untethered living landscape in your environment.
+          Deploy a next generation experience.
         </p>
         <a href="mailto:hello@untether.studio" className="magnetic-btn magnetic-btn-accent text-lg px-12 py-6">
           <span>Contact Us &rarr;</span>

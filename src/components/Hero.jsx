@@ -48,11 +48,11 @@ export default function Hero() {
               Experience
             </span>
             <span className="hero-text font-drama italic text-[2.5rem] max-md:landscape:text-[1.4rem] md:text-8xl lg:text-[9rem] xl:text-[10rem] 2xl:text-[11rem] leading-none text-primary/90 block -ml-1 max-md:landscape:ml-0 md:-ml-2" style={{ pointerEvents: 'none' }}>
-              Living Systems
+              Art + Tech
             </span>
           </h1>
           <p className="hero-text mt-3 md:mt-8 text-xs max-md:landscape:text-xs md:text-lg lg:text-xl font-sans text-primary/70 max-w-xl" style={{ pointerEvents: 'none' }}>
-            A playful window into a world of characters that respond to your presence and actions.
+            We create XR experiences. We do commissions.
           </p>
           {/* <div className="hero-btn mt-5 landscape:mt-2 md:mt-12">
             <a href="#contact" className="magnetic-btn magnetic-btn-accent group">
