@@ -1,8 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import heartSvg from '../assets/icons/heart.svg';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const heartImage = new Image();
+heartImage.src = heartSvg;
 
 // --- NEW: Helper Component to split strings into individual animated letters ---
 const SplitText = ({ text, className }) => (
@@ -118,33 +122,24 @@ class Boid {
     this.visualVx += (this.vx - this.visualVx) * 0.1;
     this.visualVy += (this.vy - this.visualVy) * 0.1;
 
+    if (!heartImage.complete || heartImage.naturalWidth === 0) return;
+
     boidsCtx.save();
     boidsCtx.translate(this.x, this.y);
-    boidsCtx.rotate(Math.atan2(this.visualVy, this.visualVx));
-    
-    boidsCtx.beginPath();
-    boidsCtx.moveTo(-this.size, 0); 
-    boidsCtx.bezierCurveTo(
-      -this.size * 0.7, -this.size * 0.3, 
-      0, -this.size * 0.3, 
-      0, 0 
-    );
-    boidsCtx.bezierCurveTo(
-      0, this.size * 0.3, 
-      -this.size * 0.7, this.size * 0.3, 
-      -this.size, 0
-    );
+    boidsCtx.rotate(Math.atan2(this.visualVy, this.visualVx) - Math.PI / 2);
 
-    boidsCtx.closePath();
-    boidsCtx.fillStyle = 'rgba(128, 60, 255, 0.85)';
+    const scale = this.size / 176;
+    const w = 210 * scale;
+    const h = 229 * scale;
+
     boidsCtx.shadowColor = '#a855f7';
     boidsCtx.shadowBlur = 8;
-    boidsCtx.fill();
+    boidsCtx.drawImage(heartImage, -w / 2, -h / 2, w, h);
     boidsCtx.restore();
   }
 }
 
-export default function Philosophy() {
+export default function Desire() {
   const canvasRef = useRef(null);
   const mouseRef = useRef({ x: null, y: null });
   const foodRef = useRef({ x: null, y: null, radius: 0 });
@@ -291,7 +286,7 @@ export default function Philosophy() {
   }, []);
 
   return (
-    <section id="philosophy" ref={sectionRef} className="relative w-full min-h-[80vh] bg-orange-500 overflow-hidden flex items-center justify-center p-8 md:p-16 lg:p-24 ">
+    <section id="desire" ref={sectionRef} className="relative w-full min-h-[80vh] bg-orange-500 overflow-hidden flex items-center justify-center p-8 md:p-16 lg:p-24 ">
       <div style={{position: 'absolute', inset: 0, zIndex: 20, pointerEvents: 'auto'}}>
         <canvas ref={canvasRef} style={{width: '100%', height: '100%', display: 'block'}} />
       </div>

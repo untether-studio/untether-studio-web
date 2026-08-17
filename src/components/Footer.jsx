@@ -1,17 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/logos/untether-studio-logo.svg';
 
 export default function Footer() {
   return (
     <footer className="relative bg-dark text-primary pt-24 pb-12 px-8 md:px-16 rounded-t-[4rem] -mt-10 z-20">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-24">
-        <div className="md:col-span-2">
-          <div className="font-sans font-bold text-4xl tracking-tighter uppercase mb-4">
-            untether.
-          </div>
+        <div className="md:col-span-2 flex items-center gap-6">
+          <img
+            src={logo}
+            alt="untether studio"
+            className="h-24 lg:h-32 w-auto shrink-0"
+          />
           <p className="font-mono text-sm text-primary/50 max-w-xs">
-            Interactive digital art that evolves with you. 
-            Dissolving the digital divide.
+            Art + Tech experiences built and delivered to specification.
           </p>
         </div>
         
@@ -19,7 +21,7 @@ export default function Footer() {
           <h4 className="font-mono text-xs uppercase tracking-widest text-primary/40 mb-6">Navigation</h4>
           <ul className="space-y-4 font-sans font-medium text-sm">
             <li><a href="#services" className="hover:text-accent transition-colors">Services</a></li>
-            <li><a href="#philosophy" className="hover:text-accent transition-colors">Philosophy</a></li>
+            <li><a href="#desire" className="hover:text-accent transition-colors">Desire</a></li>
             <li><a href="#about" className="hover:text-accent transition-colors">About</a></li>
             <li><a href="#contact" className="hover:text-accent transition-colors">Contact</a></li>
           </ul>

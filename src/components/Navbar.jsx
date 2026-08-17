@@ -86,18 +86,18 @@ export default function Navbar() {
               }}
             >Services</a>
             <a
-              href="#philosophy"
+              href="#desire"
               className="hover:text-accent transition-colors"
               onClick={e => {
                 e.preventDefault();
                 if (location.pathname !== "/") {
-                  sessionStorage.setItem('scrollToHash', '#philosophy');
+                  sessionStorage.setItem('scrollToHash', '#desire');
                   window.location.href = '/';
                 } else {
-                  window.location.hash = '#philosophy';
+                  window.location.hash = '#desire';
                 }
               }}
-            >Philosophy</a>
+            >Desire</a>
             <a
               href="#about"
               className="hover:text-accent transition-colors"
@@ -166,19 +166,19 @@ export default function Navbar() {
               }}
             >Services</a>
             <a
-              href="#philosophy"
+              href="#desire"
               className="text-base font-sans font-bold text-dark hover:text-accent transition-colors py-2"
               onClick={e => {
                 e.preventDefault();
                 handleMobileMenuClose();
                 if (location.pathname !== "/") {
-                  sessionStorage.setItem('scrollToHash', '#philosophy');
+                  sessionStorage.setItem('scrollToHash', '#desire');
                   window.location.href = '/';
                 } else {
-                  window.location.hash = '#philosophy';
+                  window.location.hash = '#desire';
                 }
               }}
-            >Philosophy</a>
+            >Desire</a>
             <a
               href="#about"
               className="text-base font-sans font-bold text-dark hover:text-accent transition-colors py-2"
