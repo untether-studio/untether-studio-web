@@ -4,7 +4,7 @@ import logo from '../assets/logos/untether-studio-logo.svg';
 
 export default function Footer() {
   return (
-    <footer className="relative bg-dark text-primary pt-24 pb-12 px-8 md:px-16 rounded-t-[4rem] -mt-10 z-20">
+    <footer className="relative bg-dark text-primary pt-24 pb-12 px-8 md:px-16 rounded-t-[4rem] -mt-[60px] z-20">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-24">
         <div className="md:col-span-2 flex items-center gap-6">
           <img
