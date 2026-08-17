@@ -16,10 +16,10 @@ export default function About() {
       <div className="h-screen w-full flex items-center justify-center p-8 md:p-16 bg-dark border-b border-primary/10 overflow-hidden">
         <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="font-mono text-xl text-accent block mb-4">01</span>
-            <h2 className="font-sans font-bold text-5xl md:text-7xl tracking-tighter uppercase mb-6">Initialize</h2>
+            <span className="font-mono text-xl text-accent block mb-4">2009</span>
+            <h2 className="font-sans font-bold text-5xl md:text-7xl tracking-tighter uppercase mb-6">About</h2>
             <p className="font-mono text-sm text-primary/70 max-w-md leading-relaxed">
-              Establishing base layer connection. Begin mind sync to map parameters. Understand the foundation of art space. Commence design of unique VR/AR/MR/XR experience.
+              Established in 2009 as a multidisciplinary digital studio, we specialise in the intersection of code and art. We've worked on many projects for clients from house hold brand names to universities bringing complex visions to life. As technology has evolved, so have we. To push boundaries we embrace the use of AI in our workflow, but always ensure the experience is crafted with a human touch. 
             </p>
           </div>
           <div className="flex justify-center md:justify-end">
