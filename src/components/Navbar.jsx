@@ -48,7 +48,7 @@ export default function Navbar() {
       </div>
       <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-[100] w-[90%] max-w-[600px]">
         <div 
-          className={`flex items-center justify-between px-6 py-3 rounded-full transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] gap-x-12 ${
+          className={`flex items-center justify-between px-6 py-3 rounded-full transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] gap-x-6 ${
             scrolled 
               ? 'glass-nav text-dark' 
               : 'bg-transparent text-primary'
@@ -57,7 +57,7 @@ export default function Navbar() {
           <img
             src={logotype}
             alt="untether studio"
-            className="h-5 w-auto shrink-0"
+            className="h-4 w-auto shrink-0"
           />
           <div className="hidden md:flex items-center space-x-8 text-sm font-sans font-medium">
             <Link
