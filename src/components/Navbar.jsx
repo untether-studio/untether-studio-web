@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import logotype from '../assets/logos/untether-studio-logotype.svg';
 
 export default function Navbar() {
 
@@ -53,9 +54,11 @@ export default function Navbar() {
               : 'bg-transparent text-primary'
           }`}
         >
-          <div className="font-sans font-bold tracking-tighter text-xl">
-            untether.
-          </div>
+          <img
+            src={logotype}
+            alt="untether studio"
+            className="h-5 w-auto shrink-0"
+          />
           <div className="hidden md:flex items-center space-x-8 text-sm font-sans font-medium">
             <Link
               to="/"
