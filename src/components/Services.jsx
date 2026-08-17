@@ -22,10 +22,19 @@ const ShufflerCard = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[320px] bg-surface border border-dark/10 rounded-[2rem] shadow-sm p-8 flex flex-col justify-between overflow-hidden">
+    <div className="relative w-full h-[480px] bg-surface border border-dark/10 rounded-[2rem] shadow-sm p-8 flex flex-col justify-between overflow-hidden">
       <div className="z-20">
-        <h3 className="font-sans font-bold text-xl uppercase tracking-tighter">Living Landscapes</h3>
-        <p className="font-mono text-xs text-dark/60 mt-2">World building: Unique and highly immersive environments</p>
+        <h3 className="font-sans font-bold text-xl uppercase tracking-tighter">3D Production & Animation</h3>
+        <p className="font-drama italic text-lg text-dark mt-1">Bringing concepts to life.</p>
+        <p className="font-mono text-xs text-dark/60 mt-2">
+          Elevate your projects with high-quality 3D art. Whether you need bespoke assets for a game or dynamic animations for a marketing campaign, we handle the entire visual pipeline.
+        </p>
+        <p className="font-mono text-[10px] uppercase tracking-widest text-accent font-bold mt-3">Key Deliverables</p>
+        <ul className="mt-1.5 space-y-1 list-disc pl-4 marker:text-accent">
+          <li className="font-mono text-xs text-dark/60">3D Modeling & Asset Creation</li>
+          <li className="font-mono text-xs text-dark/60">Character & Object Animation</li>
+          <li className="font-mono text-xs text-dark/60">Environment Design</li>
+        </ul>
       </div>
       <div className="relative h-28 w-full mt-auto">
         {cards.map((card, i) => (
@@ -77,11 +86,20 @@ const TypewriterCard = () => {
   }, [charIndex, msgIndex]);
 
   return (
-    <div className="relative w-full h-[320px] bg-surface border border-dark/10 rounded-[2rem] shadow-sm p-8 flex flex-col">
+    <div className="relative w-full h-[480px] bg-surface border border-dark/10 rounded-[2rem] shadow-sm p-8 flex flex-col">
       <div className="flex justify-between items-start z-20">
         <div>
-          <h3 className="font-sans font-bold text-xl uppercase tracking-tighter">Sensory-Reactive</h3>
-          <p className="font-mono text-xs text-dark/60 mt-2">Interactive: Art that responds to human presence</p>
+          <h3 className="font-sans font-bold text-xl uppercase tracking-tighter">Immersive & Interactive</h3>
+          <p className="font-drama italic text-lg text-dark mt-1">Engaging worlds and realities.</p>
+          <p className="font-mono text-xs text-dark/60 mt-2">
+            Captivate your audience with interactive gameplay and cutting-edge virtual reality. We build immersive experiences that push the boundaries of user engagement and storytelling.
+          </p>
+          <p className="font-mono text-[10px] uppercase tracking-widest text-accent font-bold mt-3">Key Deliverables</p>
+          <ul className="mt-1.5 space-y-1 list-disc pl-4 marker:text-accent">
+            <li className="font-mono text-xs text-dark/60">Game Development (2D & 3D)</li>
+            <li className="font-mono text-xs text-dark/60">Virtual Reality (VR) Experiences</li>
+            <li className="font-mono text-xs text-dark/60">Interactive Prototyping</li>
+          </ul>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 rounded-full bg-accent animate-pulse"></div>
@@ -126,10 +144,19 @@ const SchedulerCard = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full h-[320px] bg-surface border border-dark/10 rounded-[2rem] shadow-sm p-8 flex flex-col">
+    <div ref={containerRef} className="relative w-full h-[480px] bg-surface border border-dark/10 rounded-[2rem] shadow-sm p-8 flex flex-col">
       <div className="z-20">
-        <h3 className="font-sans font-bold text-xl uppercase tracking-tighter">Immersion</h3>
-        <p className="font-mono text-xs text-dark/60 mt-2">Software: AI tools used by highly skilled and experienced humans</p>
+        <h3 className="font-sans font-bold text-xl uppercase tracking-tighter">Digital Platforms</h3>
+        <p className="font-drama italic text-lg text-dark mt-1">Seamless web and mobile solutions.</p>
+        <p className="font-mono text-xs text-dark/60 mt-2">
+          From responsive websites to intuitive mobile applications, we engineer robust, user-centric digital products tailored to solve real-world problems and grow your brand.
+        </p>
+        <p className="font-mono text-[10px] uppercase tracking-widest text-accent font-bold mt-3">Key Deliverables</p>
+        <ul className="mt-1.5 space-y-1 list-disc pl-4 marker:text-accent">
+          <li className="font-mono text-xs text-dark/60">Full-Stack Web Development</li>
+          <li className="font-mono text-xs text-dark/60">Mobile App Creation</li>
+          <li className="font-mono text-xs text-dark/60">UI/UX Implementation</li>
+        </ul>
       </div>
       
       <div className="mt-auto relative">
@@ -160,12 +187,12 @@ const SchedulerCard = () => {
   );
 };
 
-export default function Features() {
+export default function Services() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.feature-card', {
+      gsap.from('.service-card', {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top 70%',
@@ -181,10 +208,10 @@ export default function Features() {
   }, []);
 
   return (
-    <section id="features" ref={sectionRef} className="px-6 py-24 md:px-16 lg:px-24 bg-primary mx-auto max-w-[1400px]">
+    <section id="services" ref={sectionRef} className="px-6 py-24 md:px-16 lg:px-24 bg-primary mx-auto max-w-[1400px]">
       <div className="mb-16">
         <h2 className="font-sans font-bold text-4xl md:text-5xl tracking-tighter uppercase">
-          Interactive Artworks
+          SERVICES
         </h2>
         <p className="font-mono text-sm mt-4 text-dark/60 max-w-md">
           Three systems drive the Untether experience: Interaction, software, and world building. Our artworks evolve and react to human presence, creating an immersive experience.
@@ -192,13 +219,13 @@ export default function Features() {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div className="feature-card">
+        <div className="service-card">
           <TypewriterCard />
         </div>
-        <div className="feature-card">
+        <div className="service-card">
           <SchedulerCard />
         </div>
-        <div className="feature-card">
+        <div className="service-card">
           <ShufflerCard />
         </div>
       </div>
