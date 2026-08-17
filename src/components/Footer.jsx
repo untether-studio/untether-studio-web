@@ -20,7 +20,7 @@ export default function Footer() {
           <ul className="space-y-4 font-sans font-medium text-sm">
             <li><a href="#services" className="hover:text-accent transition-colors">Services</a></li>
             <li><a href="#philosophy" className="hover:text-accent transition-colors">Philosophy</a></li>
-            <li><a href="#protocol" className="hover:text-accent transition-colors">Protocol</a></li>
+            <li><a href="#about" className="hover:text-accent transition-colors">About</a></li>
             <li><a href="#contact" className="hover:text-accent transition-colors">Contact</a></li>
           </ul>
         </div>

@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import Philosophy from './components/Philosophy';
-import Protocol from './components/Protocol';
+import About from './components/About';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import PrivacyPolicy from './components/PrivacyPolicy';
@@ -51,7 +51,7 @@ function App() {
                   <Hero />
                   <Services />
                   <Philosophy />
-                  <Protocol />
+                  <About />
                   <CTA />
                 </>
               }

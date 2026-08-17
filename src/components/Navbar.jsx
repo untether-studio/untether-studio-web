@@ -96,18 +96,18 @@ export default function Navbar() {
               }}
             >Philosophy</a>
             <a
-              href="#protocol"
+              href="#about"
               className="hover:text-accent transition-colors"
               onClick={e => {
                 e.preventDefault();
                 if (location.pathname !== "/") {
-                  sessionStorage.setItem('scrollToHash', '#protocol');
+                  sessionStorage.setItem('scrollToHash', '#about');
                   window.location.href = '/';
                 } else {
-                  window.location.hash = '#protocol';
+                  window.location.hash = '#about';
                 }
               }}
-            >Protocol</a>
+            >About</a>
           </div>
           {/* Contact button moved to top right, so removed from here */}
           <button className="md:hidden p-2" onClick={handleMobileMenuToggle} aria-label="Open menu">
@@ -177,19 +177,19 @@ export default function Navbar() {
               }}
             >Philosophy</a>
             <a
-              href="#protocol"
+              href="#about"
               className="text-base font-sans font-bold text-dark hover:text-accent transition-colors py-2"
               onClick={e => {
                 e.preventDefault();
                 handleMobileMenuClose();
                 if (location.pathname !== "/") {
-                  sessionStorage.setItem('scrollToHash', '#protocol');
+                  sessionStorage.setItem('scrollToHash', '#about');
                   window.location.href = '/';
                 } else {
-                  window.location.hash = '#protocol';
+                  window.location.hash = '#about';
                 }
               }}
-            >Protocol</a>
+            >About</a>
             <a
               href="#contact"
               className="mt-2 magnetic-btn magnetic-btn-accent px-4 py-2 text-sm flex items-center justify-center"
