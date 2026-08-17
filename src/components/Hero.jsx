@@ -52,7 +52,7 @@ export default function Hero() {
             </span>
           </h1>
           <p className="hero-text mt-3 md:mt-8 text-xs max-md:landscape:text-xs md:text-lg lg:text-xl font-sans text-primary/70 max-w-xl" style={{ pointerEvents: 'none' }}>
-            We create XR experiences. Available for commissions.
+            We create digital experiences. Available for commissions.
           </p>
           {/* <div className="hero-btn mt-5 landscape:mt-2 md:mt-12">
             <a href="#contact" className="magnetic-btn magnetic-btn-accent group">
@@ -60,16 +60,16 @@ export default function Hero() {
             </a>
           </div> */}
         </div>
-      </div>
 
-      <button
-        type="button"
-        onClick={handleScrollToNextSection}
-        aria-label="Scroll to next section"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-primary text-2xl leading-none pointer-events-auto"
-      >
-        ↓
-      </button>
+        <button
+          type="button"
+          onClick={handleScrollToNextSection}
+          aria-label="Scroll to next section"
+          className="self-center mt-6 md:mt-0 md:absolute md:bottom-8 md:left-1/2 md:-translate-x-1/2 z-20 text-primary text-5xl md:text-2xl leading-none pointer-events-auto"
+        >
+          ↓
+        </button>
+      </div>
     </section>
   );
 }
