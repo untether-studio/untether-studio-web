@@ -32,7 +32,8 @@ const COLORS = ramp(PURPLE, GREEN, 16);
 const COLORS_ALT = ramp(GREEN, PURPLE, 17);
 
 // Number of circles per row, top to bottom (forms an upward-pointing triangle).
-const ROW_COUNTS = [1, 3, 5, 7, 9, 11, 13, 15, 17];
+// const ROW_COUNTS = [1, 3, 5, 7, 9, 11, 13, 15, 17];
+const ROW_COUNTS = [10, 10, 10, 10, 10, 10];
 
 export default function GeometricCircles() {
   return (
