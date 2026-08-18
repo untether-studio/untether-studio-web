@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { MousePointer2 } from 'lucide-react';
 import productionAnimationImg from '../assets/images/3d-production-animation.jpg';
 import digitalPlatformsImg from '../assets/images/digital-platforms.jpg';
 import immersiveInteractiveImg from '../assets/images/immersive-interactive.jpg';
 import GeometricCircles from './GeometricCircles';
+import DotGrid from './DotGrid';
 
 const ShufflerCard = () => {
   const [cards, setCards] = useState([
@@ -105,33 +105,9 @@ const GeometricCard = () => {
   );
 };
 
-const SchedulerCard = () => {
-  const containerRef = useRef(null);
-  const cursorRef = useRef(null);
-  const days = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
-  const [activeDay, setActiveDay] = useState(-1);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
-
-      tl.set(cursorRef.current, { x: 0, y: 150, opacity: 0 })
-        .to(cursorRef.current, { opacity: 1, duration: 0.3 })
-        .to(cursorRef.current, { x: 90, y: 40, duration: 1, ease: "power2.inOut" })
-        .to(cursorRef.current, { scale: 0.8, duration: 0.1, yoyo: true, repeat: 1, onStart: () => setActiveDay(3) })
-        .to(cursorRef.current, { x: 180, y: 110, duration: 1, ease: "power2.inOut", delay: 0.5 })
-        .to(cursorRef.current, { scale: 0.8, duration: 0.1, yoyo: true, repeat: 1 })
-        .to(cursorRef.current, { opacity: 0, duration: 0.3, delay: 0.2 });
-
-        return () => {
-          setActiveDay(-1);
-        }
-    }, containerRef);
-    return () => ctx.revert();
-  }, []);
-
+const GridCard = () => {
   return (
-    <div ref={containerRef} className="relative w-full h-[560px] bg-surface border border-dark/10 rounded-[2rem] shadow-sm overflow-hidden flex flex-col">
+    <div className="relative w-full h-[560px] bg-surface border border-dark/10 rounded-[2rem] shadow-sm overflow-hidden flex flex-col">
       <div className="relative h-44 w-full shrink-0">
         <img
           src={digitalPlatformsImg}
@@ -155,29 +131,8 @@ const SchedulerCard = () => {
           <li className="font-mono text-xs text-dark/60">UI/UX Implementation</li>
         </ul>
 
-        <div className="mt-auto relative">
-          <div className="grid grid-cols-7 gap-2 mb-4">
-            {days.map((day, i) => (
-              <div
-                key={i}
-                className={`aspect-square rounded-lg border flex items-center justify-center font-mono text-xs transition-colors duration-300 ${
-                  activeDay === i ? 'bg-accent text-primary border-accent' : 'border-dark/10 text-dark/40 bg-white/50'
-                }`}
-              >
-                {day}
-              </div>
-            ))}
-          </div>
-          <div className="w-full flex justify-end">
-            <button className="bg-dark text-primary font-mono text-[10px] uppercase px-4 py-2 rounded-lg get-save-btn">
-              Compile
-            </button>
-          </div>
-
-          {/* Animated Cursor */}
-          <div ref={cursorRef} className="absolute top-0 left-0 z-50 pointer-events-none drop-shadow-md text-dark">
-            <MousePointer2 size={24} fill="currentColor" />
-          </div>
+        <div className="mt-auto flex justify-center pt-2">
+          <DotGrid />
         </div>
       </div>
     </div>
@@ -220,7 +175,7 @@ export default function Services() {
           <GeometricCard />
         </div>
         <div className="service-card">
-          <SchedulerCard />
+          <GridCard />
         </div>
         <div className="service-card">
           <ShufflerCard />
