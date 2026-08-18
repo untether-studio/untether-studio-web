@@ -2,7 +2,7 @@
    outward from the center (lines rotate, dots scale). */
 
 .geo-grid {
-  --dot-size: 7.5px;
+  --dot-size: 12px;
   --gutter: 2px;
   --line-weight: 4.5px;
   --speed: 2.5s;
@@ -11,10 +11,10 @@
 
   position: relative;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  width: 250.6px;
-  height: 117.6px;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 250px;
+  height: 130px;
 }
 
 .geo-grid__cell {
