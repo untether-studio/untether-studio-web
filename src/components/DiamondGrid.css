@@ -1,0 +1,47 @@
+/* Diamond lattice — a checkerboard of diamonds that pulse outward from the center. */
+
+.diamond-grid {
+  --diamond-size: 22px;
+  --speed: 2.5s;
+  --purple: #5C1476;
+  --green: #67F15A;
+
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 12px;
+  width: 294px;
+  height: 158px;
+}
+
+.diamond-grid__cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diamond-grid__diamond {
+  display: block;
+  width: var(--diamond-size);
+  height: var(--diamond-size);
+  transform: rotate(45deg);
+  animation: diamond-pulse var(--speed) ease-in-out infinite;
+}
+
+.diamond-grid__diamond--purple {
+  background: var(--purple);
+}
+
+.diamond-grid__diamond--green {
+  background: var(--green);
+}
+
+@keyframes diamond-pulse {
+  0%, 100% {
+    transform: rotate(45deg) scale(0.2);
+  }
+  50% {
+    transform: rotate(45deg) scale(1);
+  }
+}

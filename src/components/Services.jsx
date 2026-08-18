@@ -1,30 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import productionAnimationImg from '../assets/images/3d-production-animation.jpg';
 import digitalPlatformsImg from '../assets/images/digital-platforms.jpg';
 import immersiveInteractiveImg from '../assets/images/immersive-interactive.jpg';
 import GeometricCircles from './GeometricCircles';
 import DotGrid from './DotGrid';
+import DiamondGrid from './DiamondGrid';
 
-const ShufflerCard = () => {
-  const [cards, setCards] = useState([
-    { id: 1, label: 'Creating Lifeforms', status: '...' },
-    { id: 2, label: 'Environmental Design', status: '---' },
-    { id: 3, label: 'Emotion Driven', status: '+++' }
-  ]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCards(prev => {
-        const newCards = [...prev];
-        const last = newCards.pop();
-        newCards.unshift(last);
-        return newCards;
-      });
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
+const DiamondCard = () => {
   return (
     <div className="relative w-full h-[560px] bg-surface border border-dark/10 rounded-[2rem] shadow-sm overflow-hidden flex flex-col">
       <div className="relative h-44 w-full shrink-0">
@@ -49,22 +32,9 @@ const ShufflerCard = () => {
           <li className="font-mono text-xs text-dark/60">Character & Object Animation</li>
           <li className="font-mono text-xs text-dark/60">Environment Design</li>
         </ul>
-        <div className="relative h-28 w-full mt-auto">
-          {cards.map((card, i) => (
-            <div
-              key={card.id}
-              className="absolute left-0 right-0 p-4 border border-dark/10 rounded-xl bg-surface transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] flex justify-between items-center"
-              style={{
-                transform: `translateY(${i * 12}px) scale(${1 - i * 0.05})`,
-                zIndex: 10 - i,
-                opacity: 1 - i * 0.2,
-                boxShadow: i === 0 ? '0 10px 20px -10px rgba(0,0,0,0.1)' : 'none'
-              }}
-            >
-              <span className="font-mono text-xs font-bold">{card.label}</span>
-              <span className="font-mono text-[10px] bg-dark text-primary px-2 py-1 rounded-full">{card.status}</span>
-            </div>
-          ))}
+
+        <div className="mt-auto flex justify-center pt-2">
+          <DiamondGrid />
         </div>
       </div>
     </div>
@@ -178,7 +148,7 @@ export default function Services() {
           <GridCard />
         </div>
         <div className="service-card">
-          <ShufflerCard />
+          <DiamondCard />
         </div>
       </div>
     </section>

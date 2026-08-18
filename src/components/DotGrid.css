@@ -30,7 +30,6 @@
   display: block;
   background: var(--line-color);
   border-radius: 4px;
-  opacity: var(--cell-opacity);
   animation-delay: var(--cell-delay);
 }
 
@@ -65,7 +64,6 @@
   border-radius: 50%;
   transform: translate(-50%, -50%);
   animation: geo-grid-dot var(--speed) infinite alternate ease-in;
-  opacity: var(--cell-opacity);
   animation-delay: var(--cell-delay);
 }
 
