@@ -1,8 +1,8 @@
 import './DotGrid.css';
 
 const COLS = 12;
-const ROWS = 12;
-const CENTER_ROW = 6; // 0-indexed
+const ROWS = 6;
+const CENTER_ROW = 3; // 0-indexed
 const CENTER_COL = 6; // 1-indexed
 
 // Precompute each cell's opacity and animation delay from its distance to
@@ -15,7 +15,7 @@ const cells = Array.from({ length: ROWS }, (_, row) =>
     const power = rowPower + colPower;
     return {
       key: `${row}-${col}`,
-      opacity: power * 0.5,
+      opacity: power * 0.9,
       delay: power * -0.5,
     };
   })
