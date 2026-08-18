@@ -8,6 +8,35 @@ gsap.registerPlugin(ScrollTrigger);
 const heartImage = new Image();
 heartImage.src = heartSvg;
 
+// Theme accent (#610B81) expressed in HSL: hue 284, saturation 84%, lightness 27%.
+const ACCENT_HUE = 284;
+const ACCENT_SAT = 84;
+const ACCENT_LIGHT = 27;
+
+// A boid color: the accent hue/saturation with a tight random lightness range.
+const randomAccentColor = () => {
+  const light = ACCENT_LIGHT + (Math.random() * 10 - 5); // 22% - 32%
+  return `hsl(${ACCENT_HUE}, ${ACCENT_SAT}%, ${light}%)`;
+};
+
+// Recolors the heart glyph (source-in preserves its alpha) and caches the result.
+const tintedHearts = new Map();
+const tintHeart = (color) => {
+  if (tintedHearts.has(color)) return tintedHearts.get(color);
+
+  const tintCanvas = document.createElement('canvas');
+  tintCanvas.width = heartImage.naturalWidth;
+  tintCanvas.height = heartImage.naturalHeight;
+  const tintCtx = tintCanvas.getContext('2d');
+  tintCtx.drawImage(heartImage, 0, 0);
+  tintCtx.globalCompositeOperation = 'source-in';
+  tintCtx.fillStyle = color;
+  tintCtx.fillRect(0, 0, tintCanvas.width, tintCanvas.height);
+
+  tintedHearts.set(color, tintCanvas);
+  return tintCanvas;
+};
+
 // --- NEW: Helper Component to split strings into individual animated letters ---
 const SplitText = ({ text, className }) => (
   <span className={`inline-block ${className || ''}`}>
@@ -33,6 +62,7 @@ class Boid {
     this.visualVx = this.vx; 
     this.visualVy = this.vy;
     this.size = 18 + Math.random() * 8;
+    this.color = randomAccentColor();
   }
 
   update(boids, width, height, mouseRef, foodRef) {
@@ -132,9 +162,11 @@ class Boid {
     const w = 210 * scale;
     const h = 229 * scale;
 
-    boidsCtx.shadowColor = '#a855f7';
+    const heart = tintHeart(this.color);
+
+    boidsCtx.shadowColor = this.color;
     boidsCtx.shadowBlur = 8;
-    boidsCtx.drawImage(heartImage, -w / 2, -h / 2, w, h);
+    boidsCtx.drawImage(heart, -w / 2, -h / 2, w, h);
     boidsCtx.restore();
   }
 }

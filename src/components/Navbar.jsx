@@ -97,7 +97,7 @@ export default function Navbar() {
                   window.location.hash = '#desire';
                 }
               }}
-            >Desire</a>
+            >Desires</a>
             <a
               href="#about"
               className="hover:text-accent transition-colors"
