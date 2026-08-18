@@ -21,7 +21,7 @@ export default function Footer() {
           <h4 className="font-mono text-xs uppercase tracking-widest text-primary/40 mb-6">Navigation</h4>
           <ul className="space-y-4 font-sans font-medium text-sm">
             <li><a href="#services" className="hover:text-accent transition-colors">Services</a></li>
-            <li><a href="#desire" className="hover:text-accent transition-colors">Desire</a></li>
+            <li><a href="#desire" className="hover:text-accent transition-colors">Desires</a></li>
             <li><a href="#about" className="hover:text-accent transition-colors">About</a></li>
             <li><a href="#contact" className="hover:text-accent transition-colors">Contact</a></li>
           </ul>

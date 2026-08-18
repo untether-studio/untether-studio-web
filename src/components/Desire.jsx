@@ -11,11 +11,11 @@ heartImage.src = heartSvg;
 // Theme accent (#610B81) expressed in HSL: hue 284, saturation 84%, lightness 27%.
 const ACCENT_HUE = 284;
 const ACCENT_SAT = 84;
-const ACCENT_LIGHT = 27;
+const ACCENT_LIGHT = 37;
 
 // A boid color: the accent hue/saturation with a tight random lightness range.
 const randomAccentColor = () => {
-  const light = ACCENT_LIGHT + (Math.random() * 10 - 5); // 22% - 32%
+  const light = ACCENT_LIGHT + (Math.random() * 30 - 5); 
   return `hsl(${ACCENT_HUE}, ${ACCENT_SAT}%, ${light}%)`;
 };
 
@@ -61,7 +61,7 @@ class Boid {
     this.vy = Math.sin(angle) * 2;
     this.visualVx = this.vx; 
     this.visualVy = this.vy;
-    this.size = 18 + Math.random() * 8;
+    this.size = 40 + Math.random() * 8;
     this.color = randomAccentColor();
   }
 
@@ -330,14 +330,14 @@ export default function Desire() {
         
         {/* --- NEW: Text broken out using the SplitText wrapper --- */}
         <p className="font-mono text-sm md:text-base text-primary/60 uppercase mb-8">
-          <SplitText text="Here to help: " className="mr-2" />
-          <SplitText text="You!" className="text-primary" />
+          <SplitText text="Untether: " className="mr-2" />
+          <SplitText text="Freedom" className="text-primary" />
         </p>
 
         <h2 className="text-4xl md:text-6xl lg:text-[7rem] leading-[1.1] text-primary">
-          <SplitText text="Your desire:" className="font-sans font-bold uppercase tracking-tighter" />
+          <SplitText text="Your" className="font-sans font-bold uppercase tracking-tighter" />
           <br />
-          <SplitText text="Passion " className="font-drama italic text-accent pr-4" />
+          <SplitText text="Desire " className="font-drama italic text-accent pr-4" />
           <SplitText text="Unleashed." className="font-drama italic text-primary" />
         </h2>
 
