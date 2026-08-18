@@ -149,6 +149,8 @@
           document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
               }).then((unityInstance) => {
                 document.querySelector("#unity-loading-bar").style.display = "none";
+                // Notify the parent page that Unity has finished loading.
+                window.parent.postMessage({ type: 'unity-loaded' }, '*');
                 const fullscreenButton = document.querySelector("#unity-fullscreen-button");
                 if (fullscreenButton) {
                   fullscreenButton.onclick = () => {

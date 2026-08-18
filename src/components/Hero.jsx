@@ -1,8 +1,10 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
+import heroImage from '../assets/images/hero.jpg';
 
 export default function Hero() {
   const containerRef = useRef(null);
+  const [unityLoaded, setUnityLoaded] = useState(false);
 
   const handleScrollToNextSection = () => {
     const nextSection = document.getElementById('services');
@@ -10,6 +12,16 @@ export default function Hero() {
       nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
+
+  useEffect(() => {
+    const handleMessage = (event) => {
+      if (event.data?.type === 'unity-loaded') {
+        setUnityLoaded(true);
+      }
+    };
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -39,6 +51,15 @@ export default function Hero() {
         style={{ pointerEvents: 'auto', width: '100vw', height: '100vh', maxWidth: '100%', maxHeight: '100%', left: 0, top: 0 }}
         allowFullScreen
       ></iframe>
+
+      {/* Loading poster — shown over Unity until it finishes loading */}
+      <img
+        src={heroImage}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 z-[1] w-full h-full object-cover transition-opacity duration-700"
+        style={{ opacity: unityLoaded ? 0 : 1, pointerEvents: 'none' }}
+      />
 
       {/* Content */}
       <div className="relative z-10 w-full h-full flex flex-col justify-end p-4 landscape:p-3 md:p-16 lg:p-24 pb-10 landscape:pb-3 md:pb-20 pointer-events-none">
