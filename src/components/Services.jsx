@@ -4,6 +4,7 @@ import { MousePointer2 } from 'lucide-react';
 import productionAnimationImg from '../assets/images/3d-production-animation.jpg';
 import digitalPlatformsImg from '../assets/images/digital-platforms.jpg';
 import immersiveInteractiveImg from '../assets/images/immersive-interactive.jpg';
+import GeometricCircles from './GeometricCircles';
 
 const ShufflerCard = () => {
   const [cards, setCards] = useState([
@@ -70,34 +71,7 @@ const ShufflerCard = () => {
   );
 };
 
-const TypewriterCard = () => {
-  const messages = [
-    "INITIALIZING SENSORS...",
-    "DETECTING PRESENCE...",
-    "ADJUSTING LIGHT LEVELS...",
-    "ENVIRONMENT SYNCED."
-  ];
-  const [text, setText] = useState('');
-  const [msgIndex, setMsgIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-
-  useEffect(() => {
-    if (charIndex < messages[msgIndex].length) {
-      const timeout = setTimeout(() => {
-        setText(prev => prev + messages[msgIndex][charIndex]);
-        setCharIndex(c => c + 1);
-      }, 50);
-      return () => clearTimeout(timeout);
-    } else {
-      const timeout = setTimeout(() => {
-        setText('');
-        setCharIndex(0);
-        setMsgIndex((prev) => (prev + 1) % messages.length);
-      }, 2000);
-      return () => clearTimeout(timeout);
-    }
-  }, [charIndex, msgIndex]);
-
+const GeometricCard = () => {
   return (
     <div className="relative w-full h-[560px] bg-surface border border-dark/10 rounded-[2rem] shadow-sm overflow-hidden flex flex-col">
       <div className="relative h-44 w-full shrink-0">
@@ -123,12 +97,8 @@ const TypewriterCard = () => {
           <li className="font-mono text-xs text-dark/60">Interactive Prototyping</li>
         </ul>
 
-        <div className="mt-auto bg-dark rounded-xl p-4 min-h-[100px] border border-dark/20 flex items-start">
-          <p className="font-mono text-xs text-primary leading-relaxed">
-            <span className="text-accent mr-2">{'>'}</span>
-            {text}
-            <span className="inline-block w-2 h-3 bg-accent ml-1 animate-pulse"></span>
-          </p>
+        <div className="mt-auto flex justify-center pt-3">
+          <GeometricCircles />
         </div>
       </div>
     </div>
@@ -247,7 +217,7 @@ export default function Services() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div className="service-card">
-          <TypewriterCard />
+          <GeometricCard />
         </div>
         <div className="service-card">
           <SchedulerCard />
